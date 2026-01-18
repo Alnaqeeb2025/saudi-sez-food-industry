@@ -2,7 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>عرض استثماري - مجموعة بن عوض النقيب</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>عرض استثماري - مجموعة بن عوض النقيب</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -19,40 +20,48 @@
 
         * { box-sizing: border-box; transition: all 0.3s ease; }
 
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* يمنع الصفحة كاملة من الانزلاق يميناً ويساراً */
+        }
+
         body {
             font-family: 'Tajawal', sans-serif;
-            margin: 0;
             background-color: var(--bg-body);
             color: var(--text-dark);
             line-height: 1.8;
-            padding-bottom: 0;
-            -webkit-font-smoothing: antialiased; /* لتحسين جودة الخط على الجوال */
+            -webkit-font-smoothing: antialiased;
         }
 
         /* --- الهيدر الفخم --- */
         header {
             background: linear-gradient(135deg, var(--primary), #003322);
             color: var(--white);
-            padding: 4rem 1.5rem; /* تقليل الهوامش للجوال */
+            padding: 4rem 1.5rem;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            width: 100%; /* ضمان ملء الشاشة */
             border-bottom: 6px solid var(--gold);
         }
 
+        /* تحسين خلفية المربعات لتكون ناعمة */
         header::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-            opacity: 0.1;
+            opacity: 0.08; /* تخفيف حدة المربعات */
+            background-size: auto;
+            background-repeat: repeat;
         }
 
-        .header-content { position: relative; z-index: 2; }
+        .header-content { position: relative; z-index: 2; max-width: 100%; }
         
         header h1 { 
             margin: 0; 
-            font-size: clamp(1.8rem, 5vw, 2.8rem); /* خط مرن يتغير حسب الشاشة */
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
             font-weight: 800; 
             margin-bottom: 15px;
             line-height: 1.3;
@@ -81,6 +90,7 @@
             padding: 0 15px 40px;
             position: relative; 
             z-index: 10; 
+            width: 100%; /* ضمان عدم تجاوز عرض الشاشة */
         }
 
         .card {
@@ -90,6 +100,8 @@
             margin-bottom: 2rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             border-top: 4px solid transparent;
+            width: 100%;
+            overflow: hidden; /* يمنع المحتوى من الخروج من البطاقة */
         }
 
         .section-title {
@@ -101,25 +113,28 @@
             font-weight: 800;
         }
 
-        /* --- الجدول متجاوب مع السحب --- */
+        /* --- الجدول متجاوب --- */
         .table-container { 
-            overflow-x: auto; /* يسمح بالسحب الأفقي على الجوال */
+            width: 100%;
+            overflow-x: auto; /* الجدول فقط هو الذي يتحرك */
             border-radius: 10px; 
             box-shadow: 0 0 10px rgba(0,0,0,0.05); 
-            -webkit-overflow-scrolling: touch; /* سحب سلس */
-            margin-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 5px;
+            background: white;
         }
         
-        /* تلميح للمستخدم بوجود سحب */
         .scroll-hint {
-            display: none; /* مخفي على الكمبيوتر */
+            display: none;
             text-align: center;
             font-size: 0.8rem;
             color: #888;
-            margin-top: 5px;
+            margin-top: 8px;
+            animation: fadeIn 2s infinite;
         }
+        @keyframes fadeIn { 0%,100% {opacity:0.6} 50% {opacity:1} }
 
-        table { width: 100%; border-collapse: collapse; min-width: 800px; background: white; }
+        table { width: 100%; border-collapse: collapse; min-width: 800px; /* يحافظ على عرض الجدول في الداخل */ }
         th { background: var(--primary); color: white; padding: 15px; text-align: right; font-size: 1rem; white-space: nowrap; }
         td { padding: 12px; border-bottom: 1px solid #eee; color: var(--text-dark); vertical-align: middle; }
         tr:nth-child(even) { background-color: #f8fafc; }
@@ -145,13 +160,15 @@
             margin-bottom: 20px; 
             border-bottom: 2px solid #eee; 
             padding-bottom: 15px; 
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .rec-icon { font-size: 2rem; color: var(--gold); }
-        .rec-title { color: var(--primary); font-size: clamp(1.2rem, 4vw, 1.8rem); margin: 0; font-weight: 800; }
+        .rec-title { color: var(--primary); font-size: clamp(1.2rem, 4vw, 1.8rem); margin: 0; font-weight: 800; text-align: center;}
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* يتكيف تلقائياً */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
@@ -199,7 +216,7 @@
         /* --- الروابط الحكومية --- */
         .gov-links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* تصغير الحد الأدنى للجوال */
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
@@ -215,9 +232,10 @@
             text-decoration: none;
             color: var(--text-dark);
             text-align: center;
+            height: 100%;
         }
         .gov-icon { font-size: 1.5rem; color: var(--primary); margin-bottom: 8px; }
-        .gov-name { font-weight: bold; font-size: 0.9rem; }
+        .gov-name { font-weight: bold; font-size: 0.85rem; }
 
         /* --- الأزرار --- */
         .btn-link {
@@ -231,6 +249,7 @@
             border: 1px solid var(--primary);
             border-radius: 50px;
             font-size: 0.85rem;
+            white-space: nowrap;
         }
         .btn-link:hover { background: var(--primary); color: white; }
 
@@ -259,6 +278,8 @@
             text-align: center;
             padding: 30px 15px;
             border-top: 5px solid var(--gold);
+            width: 100%;
+            position: relative;
         }
         .creator-badge {
             background: rgba(255,255,255,0.1);
@@ -272,13 +293,19 @@
             border: 1px solid rgba(197, 160, 89, 0.3);
         }
 
-        /* --- تحسينات خاصة للجوال (Media Queries) --- */
+        /* --- تحسينات خاصة للجوال --- */
         @media (max-width: 768px) {
             .container { padding: 0 15px 40px; margin-top: -30px; }
-            .card { padding: 1.5rem 1rem; } /* تقليل الهوامش الداخلية */
+            .card { padding: 1.5rem 1rem; } 
             .rec-header { flex-direction: column; text-align: center; gap: 10px; }
-            .btn-main { width: 100%; } /* الزر بعرض كامل الشاشة */
-            .scroll-hint { display: block; } /* إظهار تلميح السحب */
+            .btn-main { width: 100%; } 
+            .scroll-hint { display: block; }
+            
+            /* إصلاح مشكلة الهيدر والفوتر */
+            header, footer {
+                width: 100vw; /* عرض كامل الشاشة */
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>
@@ -382,7 +409,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> اسحب الجدول يميناً ويساراً</div>
+            <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> اسحب الجدول يميناً ويساراً لعرض باقي التفاصيل</div>
         </section>
 
         <section class="card recommendation">
@@ -390,7 +417,7 @@
                 <i class="fas fa-crown rec-icon"></i>
                 <div>
                     <h2 class="rec-title">ترشيح المنطقة الأنسب: جازان (JCPDI)</h2>
-                    <p style="margin: 5px 0 0 0; color: #666; font-size: 0.95rem;">الخيار الاستراتيجي لمجموعة بن عوض النقيب</p>
+                    <p style="margin: 5px 0 0 0; color: #666; font-size: 0.95rem; text-align: center;">الخيار الاستراتيجي لمجموعة بن عوض النقيب</p>
                 </div>
             </div>
             
