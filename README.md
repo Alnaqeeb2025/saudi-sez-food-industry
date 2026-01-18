@@ -179,7 +179,7 @@
             margin-top: 10px;
         }
 
-        /* --- قسم الروابط الحكومية (جديد) --- */
+        /* --- قسم الروابط الحكومية --- */
         .gov-links-section {
             text-align: center;
         }
@@ -459,7 +459,7 @@
                     <span class="gov-name">هيئة المدن (ECZA)</span>
                 </a>
 
-                <a href="https://www.sidf.gov.sa/ar/Pages/default.aspx" target="_blank" class="gov-link-card">
+                <a href="https://www.sidf.gov.sa/ar" target="_blank" class="gov-link-card">
                     <i class="fas fa-cogs gov-icon"></i>
                     <span class="gov-name">الصندوق الصناعي (SIDF)</span>
                 </a>
@@ -472,6 +472,11 @@
                 <a href="https://misa.gov.sa/ar" target="_blank" class="gov-link-card">
                     <i class="fas fa-briefcase gov-icon"></i>
                     <span class="gov-name">وزارة الاستثمار (MISA)</span>
+                </a>
+
+                <a href="https://investsaudi.sa/ar/" target="_blank" class="gov-link-card">
+                    <i class="fas fa-rocket gov-icon"></i>
+                    <span class="gov-name">برنامج المستثمر الاستراتيجي</span>
                 </a>
 
             </div>
