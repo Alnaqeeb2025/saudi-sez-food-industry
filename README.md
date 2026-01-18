@@ -94,9 +94,37 @@
 
         .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            font-weight: 800;
+        }
+
+        /* --- الجدول --- */
+        .table-container { overflow-x: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; min-width: 900px; background: white; }
+        th { background: var(--primary); color: white; padding: 18px; text-align: right; font-size: 1.1rem; }
+        td { padding: 15px; border-bottom: 1px solid #eee; color: var(--text-dark); vertical-align: middle; }
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) { background-color: #f8fafc; }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .badge-sector { background: #e0f2fe; color: #0369a1; }
+        .badge-infra { background: #f0fdf4; color: #15803d; }
+
         /* --- التوصية الاستثمارية --- */
-        .recommendation { border-top-color: var(--gold); background: linear-gradient(to bottom, #ffffff, #fcfcfc); }
-        .rec-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .recommendation { border-top-color: var(--gold); background: linear-gradient(to bottom, #ffffff, #fffdf7); }
+        .rec-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
         .rec-icon { font-size: 2rem; color: var(--gold); }
         .rec-title { color: var(--primary); font-size: 1.8rem; margin: 0; font-weight: 800; }
 
@@ -107,78 +135,65 @@
             margin-top: 20px;
         }
         .feature-box {
-            background: #f0fdf4;
+            background: white;
             padding: 20px;
             border-radius: 12px;
+            border: 1px solid #eee;
             border-right: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
         .feature-box h4 { margin: 0 0 10px 0; color: var(--primary); font-size: 1.2rem; }
 
-        /* --- قسم التحليل المالي (الإبداعي) --- */
-        .financial-analysis { border-top-color: var(--primary); }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-        
-        /* مقارنة السيولة */
-        .liquidity-compare {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-        
-        .scenario-box {
-            flex: 1;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .scenario-old { background: #fee2e2; border: 1px solid #fca5a5; opacity: 0.8; }
-        .scenario-new { background: #dcfce7; border: 2px solid var(--primary); transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,108,53,0.1); }
-        
-        .scenario-title { font-weight: bold; margin-bottom: 15px; display: block; font-size: 1.2rem; }
-        .money-value { font-size: 2rem; font-weight: 900; display: block; margin: 10px 0; }
-        .red-text { color: #dc2626; }
-        .green-text { color: var(--primary); }
-
-        /* قسم القروض */
-        .loans-info {
-            background: #fffbeb;
-            border: 1px solid #fcd34d;
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 30px;
-        }
+        /* --- قسم التمويل --- */
+        .funding-section { border-top-color: var(--primary); }
         .loans-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-top: 20px;
         }
-        .loan-item { text-align: center; }
-        .loan-item i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
-        .loan-item h3 { color: var(--text-dark); margin-bottom: 10px; }
-
-        /* --- الجدول --- */
-        .table-container { overflow-x: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-        table { width: 100%; border-collapse: collapse; min-width: 800px; background: white; }
-        th { background: var(--primary); color: white; padding: 18px; text-align: right; }
-        td { padding: 15px; border-bottom: 1px solid #eee; color: var(--text-gray); }
-        tr:last-child td { border-bottom: none; }
-        tr:nth-child(even) { background-color: #f8fafc; }
+        .loan-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .loan-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; width: 100%; height: 5px;
+            background: var(--gold);
+        }
+        .loan-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .fee-badge {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
 
         /* --- الأزرار --- */
-        .action-area { text-align: center; margin-top: 40px; }
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        .btn-link:hover { background: var(--primary); color: white; }
+
         .btn-main {
             display: inline-flex;
             align-items: center;
@@ -191,6 +206,7 @@
             font-weight: bold;
             font-size: 1.1rem;
             box-shadow: 0 4px 15px rgba(0,86,63,0.3);
+            margin-top: 20px;
         }
         .btn-main:hover { background-color: var(--gold); transform: translateY(-3px); }
 
@@ -213,11 +229,9 @@
             margin-bottom: 10px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .liquidity-compare { flex-direction: column; }
-            .scenario-new { transform: scale(1); }
+            header h1 { font-size: 1.8rem; }
+            td, th { padding: 10px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -229,140 +243,167 @@
                 <h2>إهداء إلى مجموعة بن عوض النقيب</h2>
             </div>
             <h1>فرص الاستثمار الصناعي في المملكة</h1>
-            <p style="font-size: 1.2rem; opacity: 0.9;">دراسة استراتيجية لتأسيس مصانع المواد الغذائية بأعلى كفاءة مالية وتشغيلية</p>
+            <p style="font-size: 1.3rem; margin-top: 15px; font-weight: 500; color: var(--gold-light);">
+                مقارنة بين المدن الاقتصادية في المملكة العربية السعودية لتأسيس مصانع المواد الغذائية
+            </p>
         </div>
     </header>
 
     <div class="container">
 
-        <section class="card recommendation">
-            <div class="rec-header">
-                <i class="fas fa-crown rec-icon"></i>
-                <h2 class="rec-title">الخيار الأمثل: المنطقة الاقتصادية الخاصة بجازان (JCPDI)</h2>
-            </div>
-            <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                بناءً على نشاط المجموعة في <strong>"الصناعات الغذائية"</strong>، تتفوق منطقة جازان على كافة المناطق الأخرى لثلاثة أسباب جوهرية:
-            </p>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <h4><i class="fas fa-bullseye"></i> التخصص الدقيق</h4>
-                    <p>المنطقة الوحيدة المصممة بنيتها التحتية خصيصاً لقطاع "معالجة الأغذية" واستقبال الحبوب والمواد الخام.</p>
-                </div>
-                <div class="feature-box">
-                    <h4><i class="fas fa-bolt"></i> خفض التكاليف</h4>
-                    <p>توفر طاقة كهربائية ضخمة ومياه صناعية بأسعار مدعومة، مما يقلل الفاتورة التشغيلية الشهرية.</p>
-                </div>
-                <div class="feature-box">
-                    <h4><i class="fas fa-ship"></i> بوابة أفريقيا</h4>
-                    <p>ميناء صناعي متطور على البحر الأحمر يضمن أسرع وصول لصادرات المجموعة إلى الأسواق الأفريقية.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="card financial-analysis">
-            <h2 class="section-title">لماذا هذا الاستثمار مجدٍ مالياً للمجموعة؟</h2>
-
-            <h3 style="margin-bottom: 20px; color: var(--text-dark);"><i class="fas fa-coins" style="color: var(--gold);"></i> 1. تعزيز السيولة النقدية (Immediate Liquidity)</h3>
-            <p style="margin-bottom: 20px;">كيف يؤثر الإعفاء الضريبي (0% VAT) وتأجيل الجمارك على رأس المال العامل عند شراء الآلات ومواد البناء؟</p>
-            
-            <div class="liquidity-compare">
-                <div class="scenario-box scenario-old">
-                    <span class="scenario-title">خارج المنطقة الاقتصادية</span>
-                    <i class="fas fa-money-bill-wave" style="font-size: 2rem; color: #dc2626; opacity: 0.5;"></i>
-                    <p>تدفع 15% ضريبة + رسوم جمركية مقدماً</p>
-                    <span class="money-value red-text">-15% كاش</span>
-                    <p style="font-size: 0.9rem;">(أموال مجمدة لحين الاسترداد)</p>
-                </div>
-
-                <div class="scenario-box scenario-new">
-                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gold); color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">ميزة للمجموعة</div>
-                    <span class="scenario-title">داخل منطقة جازان (SEZ)</span>
-                    <i class="fas fa-check-circle" style="font-size: 2rem; color: var(--primary);"></i>
-                    <p>إعفاء كامل وتأجيل للرسوم</p>
-                    <span class="money-value green-text">0% مدفوعات</span>
-                    <p style="font-size: 0.9rem;"><strong>(السيولة تبقى في حساب المجموعة للتشغيل)</strong></p>
-                </div>
-            </div>
-
-            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 30px 0;">
-
-            <h3 style="margin-bottom: 20px; color: var(--text-dark);"><i class="fas fa-hand-holding-usd" style="color: var(--gold);"></i> 2. هيكلة التمويل (تكلفة رأسمال منخفضة)</h3>
-            <div class="loans-info">
-                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">
-                    يمكن للمجموعة الاستفادة من الصناديق الحكومية التي تقدم تمويلاً <strong>بتكلفة إدارية رمزية</strong> وليس بفوائد تجارية ربوية.
-                </p>
-                <div class="loans-grid">
-                    <div class="loan-item">
-                        <i class="fas fa-industry"></i>
-                        <h3>الصندوق الصناعي (SIDF)</h3>
-                        <p>تمويل يصل لـ 75% من تكلفة المصنع.</p>
-                        <span style="background: white; padding: 3px 10px; border-radius: 5px; font-size: 0.9rem; color: var(--primary);">رسوم إدارية فقط</span>
-                    </div>
-                    <div class="loan-item">
-                        <i class="fas fa-wheat"></i>
-                        <h3>الصندوق الزراعي (ADF)</h3>
-                        <p>تمويل خاص لمشاريع "الأمن الغذائي".</p>
-                        <span style="background: white; padding: 3px 10px; border-radius: 5px; font-size: 0.9rem; color: var(--primary);">أولوية قصوى</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="card">
-            <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 20px;">مقارنة فنية سريعة</h2>
+            <h2 class="section-title">تحليل المناطق الاقتصادية والمزايا التنافسية</h2>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th>المنطقة</th>
-                            <th>الميزة التنافسية للأغذية</th>
-                            <th>الحوافز الضريبية</th>
-                            <th>المصدر الرسمي</th>
+                            <th width="30%">القطاعات المستهدفة</th>
+                            <th>المزايا المالية والضريبية</th>
+                            <th>البنية التحتية والمرافق</th>
+                            <th>الموقع الرسمي</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="font-weight: bold; color: var(--primary);">جازان (JCPDI)</td>
-                            <td>بيئة مخصصة للأغذية + طاقة رخيصة</td>
-                            <td>5% ضريبة دخل + 0% قيمة مضافة</td>
-                            <td><a href="https://www.investjcpdi.com" target="_blank" style="color: var(--gold); text-decoration: none;">زيارة الموقع <i class="fas fa-external-link-alt"></i></a></td>
+                        <tr style="background-color: #f0fdf4;">
+                            <td style="font-weight: bold; color: var(--primary);">
+                                <i class="fas fa-star" style="color: var(--gold);"></i> منطقة جازان (JCPDI)
+                            </td>
+                            <td>
+                                <span class="badge badge-sector">معالجة الأغذية</span><br>
+                                <span class="badge badge-sector">تحويل المعادن</span>
+                            </td>
+                            <td>
+                                • 5% ضريبة دخل (20 عاماً)<br>
+                                • 0% ضريبة قيمة مضافة<br>
+                                • تأجيل الرسوم الجمركية
+                            </td>
+                            <td>
+                                <span class="badge badge-infra">طاقة رخيصة (2.4 جيجاوات)</span><br>
+                                <span class="badge badge-infra">خيارات مياه متعددة</span>
+                            </td>
+                            <td><a href="https://www.investjcpdi.com" target="_blank" class="btn-link">زيارة <i class="fas fa-external-link-alt"></i></a></td>
                         </tr>
                         <tr>
-                            <td>مدينة الملك عبدالله</td>
-                            <td>قربها من جدة وميناء عالمي</td>
-                            <td>5% ضريبة دخل</td>
-                            <td><a href="https://www.kaec.net/kaecsez" target="_blank" style="color: var(--text-gray); text-decoration: none;">زيارة الموقع</a></td>
+                            <td>مدينة الملك عبدالله (KAEC)</td>
+                            <td>
+                                <span class="badge badge-sector">السلع الاستهلاكية</span><br>
+                                <span class="badge badge-sector">صناعة السيارات</span>
+                            </td>
+                            <td>
+                                • 5% ضريبة دخل<br>
+                                • إعفاء جمركي للمعدات
+                            </td>
+                            <td>
+                                <span class="badge badge-infra">ميناء الملك عبدالله</span><br>
+                                <span class="badge badge-infra">شبكة غاز طبيعي</span>
+                            </td>
+                            <td><a href="https://www.kaec.net/kaecsez" target="_blank" class="btn-link">زيارة <i class="fas fa-external-link-alt"></i></a></td>
                         </tr>
                         <tr>
-                            <td>الرياض اللوجستية</td>
-                            <td>قربها من المطار (توزيع سريع)</td>
-                            <td>إعفاء ضريبي 50 عاماً</td>
-                            <td><a href="https://www.silz.gaca.gov.sa" target="_blank" style="color: var(--text-gray); text-decoration: none;">زيارة الموقع</a></td>
+                            <td>رأس الخير (Ras Al-Khair)</td>
+                            <td>
+                                <span class="badge badge-sector">الصناعات البحرية</span><br>
+                                <span class="badge badge-sector">منصات الحفر</span>
+                            </td>
+                            <td>
+                                • 5% ضريبة دخل<br>
+                                • 0% ضريبة استقطاع
+                            </td>
+                            <td>
+                                <span class="badge badge-infra">أكبر حوض بناء سفن</span><br>
+                                <span class="badge badge-infra">صناعات تعدينية ثقيلة</span>
+                            </td>
+                            <td><a href="https://www.rcjy.gov.sa" target="_blank" class="btn-link">زيارة <i class="fas fa-external-link-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>الرياض اللوجستية (RISLZ)</td>
+                            <td>
+                                <span class="badge badge-sector">الخدمات اللوجستية</span><br>
+                                <span class="badge badge-sector">التجميع الخفيف</span>
+                            </td>
+                            <td>
+                                • إعفاء ضريبي لمدة 50 عاماً<br>
+                                • 0% ضريبة دخل
+                            </td>
+                            <td>
+                                <span class="badge badge-infra">موقع جوي استراتيجي</span><br>
+                                <span class="badge badge-infra">بنية رقمية متقدمة</span>
+                            </td>
+                            <td><a href="https://www.silz.gaca.gov.sa" target="_blank" class="btn-link">زيارة <i class="fas fa-external-link-alt"></i></a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <div class="action-area">
-            <h3 style="margin-bottom: 20px;">الخطوة القادمة للمجموعة</h3>
-            <a href="https://www.investjcpdi.com" target="_blank" class="btn-main">
-                البدء في إجراءات منطقة جازان
-                <i class="fas fa-arrow-left"></i>
-            </a>
-            <div style="margin-top: 20px;">
-                <a href="https://www.misa.gov.sa" target="_blank" style="color: var(--text-gray); margin: 0 10px;">وزارة الاستثمار</a> | 
-                <a href="https://site.ecza.gov.sa/ar" target="_blank" style="color: var(--text-gray); margin: 0 10px;">هيئة المدن والمناطق الاقتصادية</a>
+        <section class="card recommendation">
+            <div class="rec-header">
+                <i class="fas fa-crown rec-icon"></i>
+                <div>
+                    <h2 class="rec-title">ترشيح المنطقة الأنسب: جازان (JCPDI)</h2>
+                    <p style="margin: 5px 0 0 0; color: #666;">الخيار الاستراتيجي لمجموعة بن عوض النقيب</p>
+                </div>
             </div>
-        </div>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 25px;">
+                لماذا تم ترشيح جازان؟ لأنها المنطقة الوحيدة التي تدمج بين <strong>الاستهداف القطاعي للأغذية</strong> وبين <strong>أقل تكلفة تشغيلية</strong> في المملكة.
+            </p>
 
-    </div>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h4><i class="fas fa-utensils"></i> التخصص في الأغذية</h4>
+                    <p>ورد في وثائق الهيئة صراحةً أن "معالجة الأغذية" قطاع رئيسي مستهدف، مما يعني بنية تحتية (مستودعات، تبريد، صرف) جاهزة لهذا النشاط.</p>
+                </div>
+                <div class="feature-box">
+                    <h4><i class="fas fa-money-bill-wave"></i> السيولة الفورية</h4>
+                    <p>الإعفاء من ضريبة القيمة المضافة (0%) وتأجيل الرسوم الجمركية يوفر سيولة نقدية فورية للمجموعة عند استيراد الآلات والمواد الخام.</p>
+                </div>
+                <div class="feature-box">
+                    <h4><i class="fas fa-globe-africa"></i> بوابة التصدير</h4>
+                    <p>موقعها على البحر الأحمر يجعلها الأقرب للأسواق الأفريقية، مما يقلل تكاليف الشحن ويسرع وصول المنتجات الغذائية (قصيرة الصلاحية).</p>
+                </div>
+            </div>
 
-    <footer>
-        <span class="creator-badge">إعداد / نصار منصور الغريب</span>
-        <p>تم إعداد هذا العرض بناءً على البيانات الرسمية لهيئة المدن والمناطق الاقتصادية الخاصة (ECZA) والصناديق التنموية.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">&copy; 2024 جميع الحقوق محفوظة لمجموعة بن عوض النقيب</p>
-    </footer>
+            <div style="text-align: center;">
+                <a href="https://www.investjcpdi.com" target="_blank" class="btn-main">
+                    البدء في إجراءات الاستثمار بمنطقة جازان
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </section>
 
-</body>
-</html>
+        <section class="card funding-section">
+            <h2 class="section-title">مصادر التمويل في المملكة (بدون فوائد ربوية)</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px auto;">
+                تتميز المملكة بوجود صناديق تنموية تدعم القطاع الصناعي والغذائي برسوم إدارية رمزية أو مقابل خدمات، وليس بنظام الفوائد التجارية المركبة.
+            </p>
+
+            <div class="loans-grid">
+                <div class="loan-card">
+                    <i class="fas fa-industry loan-icon"></i>
+                    <h3>صندوق التنمية الصناعية (SIDF)</h3>
+                    <p>يقدم قروضاً للمصانع تصل إلى <strong>75%</strong> من تكلفة المشروع.</p>
+                    <hr style="margin: 15px 0; border: 0; border-top: 1px dashed #ddd;">
+                    <p style="font-size: 0.9rem; color: #555;"><strong>التكلفة:</strong> رسوم تقييم ومتابعة (مقابل خدمات) وليست فائدة سنوية.</p>
+                    <span class="fee-badge">رسوم إدارية فقط</span>
+                </div>
+
+                <div class="loan-card">
+                    <i class="fas fa-seedling loan-icon"></i>
+                    <h3>صندوق التنمية الزراعية (ADF)</h3>
+                    <p>مخصص لمشاريع <strong>"الأمن الغذائي"</strong> واستيراد المواد الخام الزراعية.</p>
+                    <hr style="margin: 15px 0; border: 0; border-top: 1px dashed #ddd;">
+                    <p style="font-size: 0.9rem; color: #555;"><strong>التكلفة:</strong> رسوم خدمات أو هوامش ربح منخفضة جداً ومدعومة.</p>
+                    <span class="fee-badge">أولوية قصوى للأغذية</span>
+                </div>
+
+                <div class="loan-card">
+                    <i class="fas fa-hand-holding-usd loan-icon"></i>
+                    <h3>حوافز المنطقة الاقتصادية</h3>
+                    <p>دعم مالي غير مباشر عبر الإعفاءات.</p>
+                    <hr style="margin: 15px 0; border: 0; border-top: 1px dashed #ddd;">
+                    <p style="font-size: 0.9rem; color: #555;">تأجيل جمركي + إعفاء ضريبي يوفر السيولة التشغيلية (Working Capital).</p>
+                    <span class="fee-badge" style="background: #dcfce7; color: #166534;">توفير كاش فوري</span>
+                </div>
+            </div>
