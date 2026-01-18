@@ -474,10 +474,6 @@
                     <span class="gov-name">وزارة الاستثمار (MISA)</span>
                 </a>
 
-                <a href="https://investsaudi.sa/ar/" target="_blank" class="gov-link-card">
-                    <i class="fas fa-rocket gov-icon"></i>
-                    <span class="gov-name">برنامج المستثمر الاستراتيجي</span>
-                </a>
 
             </div>
         </section>
