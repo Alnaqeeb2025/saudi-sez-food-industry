@@ -26,7 +26,7 @@
             background-color: var(--bg-body);
             color: var(--text-dark);
             line-height: 1.8;
-            padding-bottom: 0; /* تم التعديل ليتناسب مع الفوتر */
+            padding-bottom: 0;
         }
 
         /* --- الهيدر الفخم --- */
@@ -78,7 +78,7 @@
         .container { 
             max-width: 1200px; 
             margin: -60px auto 0; 
-            padding: 0 20px 60px; /* مسافة قبل الفوتر */
+            padding: 0 20px 60px;
             position: relative; 
             z-index: 10; 
         }
@@ -179,6 +179,45 @@
             margin-top: 10px;
         }
 
+        /* --- قسم الروابط الحكومية (جديد) --- */
+        .gov-links-section {
+            text-align: center;
+        }
+        .gov-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gov-link-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        .gov-link-card:hover {
+            background: var(--white);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .gov-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .gov-name {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
         /* --- الأزرار --- */
         .btn-link {
             display: inline-flex;
@@ -210,7 +249,7 @@
         }
         .btn-main:hover { background-color: var(--gold); transform: translateY(-3px); }
 
-        /* --- الفوتر المميز (تمت إعادته كما طلبت) --- */
+        /* --- الفوتر --- */
         footer {
             background-color: #1a202c;
             color: #a0aec0;
@@ -408,6 +447,38 @@
                     <p style="font-size: 0.9rem; color: #555;">تأجيل جمركي + إعفاء ضريبي يوفر السيولة التشغيلية (Working Capital).</p>
                     <span class="fee-badge" style="background: #dcfce7; color: #166534;">توفير كاش فوري</span>
                 </div>
+            </div>
+        </section>
+
+        <section class="card gov-links-section">
+            <h2 class="section-title" style="font-size: 1.6rem;">الوصول المباشر للجهات الرسمية</h2>
+            <div class="gov-links-grid">
+                
+                <a href="https://site.ecza.gov.sa/ar" target="_blank" class="gov-link-card">
+                    <i class="fas fa-university gov-icon"></i>
+                    <span class="gov-name">هيئة المدن (ECZA)</span>
+                </a>
+
+                <a href="https://www.sidf.gov.sa/ar/Pages/default.aspx" target="_blank" class="gov-link-card">
+                    <i class="fas fa-cogs gov-icon"></i>
+                    <span class="gov-name">الصندوق الصناعي (SIDF)</span>
+                </a>
+
+                <a href="https://www.adf.gov.sa/ar/Pages/default.aspx" target="_blank" class="gov-link-card">
+                    <i class="fas fa-leaf gov-icon"></i>
+                    <span class="gov-name">الصندوق الزراعي (ADF)</span>
+                </a>
+
+                <a href="https://misa.gov.sa/ar" target="_blank" class="gov-link-card">
+                    <i class="fas fa-briefcase gov-icon"></i>
+                    <span class="gov-name">وزارة الاستثمار (MISA)</span>
+                </a>
+
+                <a href="https://investsaudi.sa/ar/" target="_blank" class="gov-link-card">
+                    <i class="fas fa-rocket gov-icon"></i>
+                    <span class="gov-name">برنامج المستثمر الاستراتيجي</span>
+                </a>
+
             </div>
         </section>
 
