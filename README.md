@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المناطق الاقتصادية - الصناعات الغذائية</title>
+    <title>عرض استثماري - مجموعة بن عوض النقيب</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #006C35; /* أخضر سعودي */
             --secondary: #CBA258; /* ذهبي */
-            --accent: #1e3a8a; /* أزرق داكن للروابط */
+            --accent: #1e3a8a; /* أزرق داكن */
             --bg-light: #f3f4f6;
             --white: #ffffff;
             --text: #1f2937;
@@ -24,17 +24,19 @@
             line-height: 1.6;
         }
 
-        /* الهيدر */
+        /* الهيدر المخصص للمجموعة */
         header {
             background: linear-gradient(135deg, var(--primary), #004d25);
             color: var(--white);
             padding: 4rem 1rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--secondary);
         }
 
-        header h1 { margin: 0; font-size: 2.5rem; font-weight: 900; }
-        header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
+        header h1 { margin: 0; font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; }
+        header h2 { margin: 0; font-size: 1.8rem; font-weight: 700; color: var(--secondary); }
+        header p { font-size: 1.1rem; opacity: 0.95; margin-top: 15px; max-width: 800px; margin-left: auto; margin-right: auto;}
 
         /* الحاوية */
         .container { max-width: 1200px; margin: -50px auto 0; padding: 0 20px 50px; position: relative; z-index: 10; }
@@ -55,6 +57,7 @@
             padding-right: 15px;
             margin-bottom: 20px;
             font-size: 1.5rem;
+            font-weight: 700;
         }
 
         /* الجداول */
@@ -76,7 +79,7 @@
 
         /* التوصية */
         .recommendation { border: 2px solid var(--primary); background: #f0fdf4; }
-        .recommendation h2 { color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .recommendation h2 { color: var(--primary); display: flex; align-items: center; gap: 10px; margin-top: 0; }
 
         /* قسم التمويل */
         .finance-grid {
@@ -114,26 +117,42 @@
         }
         .btn-contact:hover { background-color: var(--secondary); transform: translateY(-2px); }
 
-        /* الفوتر */
-        footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; margin-top: 20px;}
+        /* الفوتر المخصص */
+        footer { 
+            text-align: center; 
+            padding: 30px; 
+            background-color: #1f2937;
+            color: #d1d5db; 
+            font-size: 0.95rem; 
+            margin-top: 20px;
+            border-top: 4px solid var(--secondary);
+        }
+        .footer-credit {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            display: block;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>المناطق الاقتصادية الخاصة</h1>
-        <p>تحليل الفرص الاستثمارية في قطاع الصناعات الغذائية</p>
+        <h1>فرص الاستثمار الصناعي في المملكة العربية السعودية</h1>
+        <h2>إهداء إلى مجموعة بن عوض النقيب</h2>
+        <p>دراسة تحليلية لأفضل المناطق الاقتصادية لتأسيس مصانع المواد الغذائية، مدعومة بالحوافز الحكومية وحلول التمويل</p>
     </header>
 
     <div class="container">
 
         <section class="card recommendation">
             <h2><i class="fas fa-star" style="color: var(--secondary);"></i> التوصية الاستثمارية: منطقة جازان (JCPDI)</h2>
-            <p>بناءً على نشاط "الصناعات الغذائية"، تعتبر جازان الخيار الأمثل. يمكنكم الاطلاع على التفاصيل والمصدر الرسمي أدناه.</p>
+            <p>بعد تحليل المناطق الاقتصادية، نوصي <strong>مجموعة بن عوض النقيب</strong> باختيار منطقة جازان للأسباب التالية:</p>
             <ul>
-                [cite_start]<li><strong>الاستهداف:</strong> مخصصة صراحةً لقطاع "معالجة الأغذية"[cite: 674].</li>
-                [cite_start]<li><strong>التكلفة:</strong> وفرة في الطاقة والمياه بأسعار تنافسية[cite: 715, 718].</li>
-                [cite_start]<li><strong>التصدير:</strong> ميناء صناعي ضخم وبوابة للأسواق الأفريقية[cite: 668].</li>
+                [cite_start]<li><strong>الاستهداف القطاعي:</strong> المنطقة الوحيدة المخصصة صراحةً لقطاع "معالجة الأغذية"[cite: 674].</li>
+                [cite_start]<li><strong>خفض التكاليف:</strong> توفر طاقة ومياه بأسعار صناعية مدعومة، مما يرفع هامش الربح[cite: 715, 718].</li>
+                [cite_start]<li><strong>بوابة التصدير:</strong> امتلاكها ميناءً صناعياً ضخماً على البحر الأحمر يسهل الوصول للأسواق الأفريقية[cite: 668].</li>
             </ul>
             <a href="https://www.investjcpdi.com" target="_blank" class="btn-contact">
                 <i class="fas fa-external-link-alt"></i> زيارة الموقع الرسمي للمنطقة
@@ -141,14 +160,14 @@
         </section>
 
         <section class="card">
-            <h2 class="section-title">مقارنة المناطق (مع روابط المصادر)</h2>
+            <h2 class="section-title">مقارنة المناطق (تحليل فني)</h2>
             <div class="table-responsive">
                 <table>
                     <thead>
                         <tr>
                             <th>المنطقة</th>
                             <th>القطاعات المستهدفة</th>
-                            <th>المزايا المالية</th>
+                            <th>المزايا المالية والضريبية</th>
                             <th>البنية التحتية</th>
                             <th>المصدر الرسمي</th>
                         </tr>
@@ -156,23 +175,23 @@
                     <tbody>
                         <tr>
                             <td><strong>جازان (JCPDI)</strong></td>
-                            <td>معالجة الأغذية، تحويل المعادن</td>
-                            <td>5% ضريبة دخل، 0% ضريبة قيمة مضافة</td>
-                            <td>طاقة رخيصة، مياه متعددة الخيارات</td>
+                            [cite_start]<td>معالجة الأغذية، تحويل المعادن [cite: 674]</td>
+                            [cite_start]<td>5% ضريبة دخل (20 عاماً)، 0% ضريبة قيمة مضافة [cite: 726]</td>
+                            [cite_start]<td>طاقة رخيصة، مياه متعددة الخيارات [cite: 718]</td>
                             <td><a href="https://www.investjcpdi.com" target="_blank" class="source-link">عرض المصدر <i class="fas fa-arrow-left"></i></a></td>
                         </tr>
                         <tr>
                             <td><strong>مدينة الملك عبدالله (KAEC)</strong></td>
-                            <td>السلع الاستهلاكية، الأدوية</td>
-                            <td>5% ضريبة دخل، إعفاء جمركي</td>
-                            <td>ميناء عالمي، غاز طبيعي</td>
+                            [cite_start]<td>السلع الاستهلاكية، السيارات [cite: 493]</td>
+                            [cite_start]<td>5% ضريبة دخل، إعفاء جمركي [cite: 561]</td>
+                            [cite_start]<td>ميناء عالمي، غاز طبيعي [cite: 541]</td>
                             <td><a href="https://www.kaec.net/kaecsez" target="_blank" class="source-link">عرض المصدر <i class="fas fa-arrow-left"></i></a></td>
                         </tr>
                         <tr>
                             <td><strong>اللوجستية بالرياض (RISLZ)</strong></td>
-                            <td>الخدمات اللوجستية، التجميع</td>
-                            <td>إعفاء ضريبي 50 عاماً</td>
-                            <td>موقع جوي، بنية رقمية</td>
+                            [cite_start]<td>الخدمات اللوجستية، التجميع [cite: 818]</td>
+                            [cite_start]<td>إعفاء ضريبي 50 عاماً [cite: 867]</td>
+                            [cite_start]<td>موقع جوي استراتيجي [cite: 805]</td>
                             <td><a href="https://www.silz.gaca.gov.sa" target="_blank" class="source-link">عرض المصدر <i class="fas fa-arrow-left"></i></a></td>
                         </tr>
                     </tbody>
@@ -184,28 +203,28 @@
             <h2 class="section-title">حلول التمويل والدعم المالي</h2>
             <div class="finance-grid">
                 <div class="finance-item">
-                    <h3><i class="fas fa-money-bill-wave" style="color: var(--primary);"></i> الدعم غير المباشر (الكاش)</h3>
-                    <p>تأجيل دفع الرسوم الجمركية، وإعفاءات ضريبية (دخل وقيمة مضافة) توفر سيولة نقدية فورية للمشروع.</p>
-                    [cite_start]<span class="finance-source">المصدر: حوافز المنطقة الاقتصادية [cite: 728]</span>
+                    <h3><i class="fas fa-money-bill-wave" style="color: var(--primary);"></i> تعزيز السيولة النقدية</h3>
+                    [cite_start]<p>تأجيل الرسوم الجمركية [cite: 728] [cite_start]وإعفاء ضريبة القيمة المضافة [cite: 731] يوفر سيولة فورية للمجموعة عند التأسيس.</p>
+                    <span class="finance-source">المصدر: حوافز المنطقة الاقتصادية</span>
                 </div>
                 <div class="finance-item">
-                    <h3><i class="fas fa-industry" style="color: var(--primary);"></i> تمويل المصانع</h3>
-                    <p>قروض ميسرة تصل إلى 75% من تكلفة المشروع، فترات سداد طويلة.</p>
+                    <h3><i class="fas fa-industry" style="color: var(--primary);"></i> التمويل الصناعي</h3>
+                    <p>قروض ميسرة تصل إلى 75% من تكلفة المشروع للمصانع.</p>
                     <span class="finance-source">الجهة: <a href="https://www.sidf.gov.sa" target="_blank">صندوق التنمية الصناعية</a></span>
                 </div>
                 <div class="finance-item">
                     <h3><i class="fas fa-seedling" style="color: var(--primary);"></i> تمويل الأمن الغذائي</h3>
-                    <p>تسهيلات ائتمانية وقروض مخصصة لمشاريع تصنيع الأغذية.</p>
+                    <p>تسهيلات ائتمانية خاصة لمشاريع الإنتاج الغذائي.</p>
                     <span class="finance-source">الجهة: <a href="https://adf.gov.sa" target="_blank">صندوق التنمية الزراعية</a></span>
                 </div>
             </div>
         </section>
 
         <section class="card" style="text-align: center;">
-            <h2 class="section-title" style="display:inline-block; border:none;">روابط الخدمات والجهات الحكومية</h2>
-            <p>للبدء في الإجراءات، استخدم الروابط المباشرة أدناه:</p>
+            <h2 class="section-title" style="display:inline-block; border:none; margin-bottom:10px;">ابدأ استثمارك الآن</h2>
+            <p style="margin-bottom: 25px;">روابط مباشرة للجهات الحكومية:</p>
             
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                 <a href="https://site.ecza.gov.sa/ar" target="_blank" class="btn-contact">
                     هيئة المدن والمناطق الاقتصادية (ECZA)
                 </a>
@@ -221,8 +240,31 @@
     </div>
 
     <footer>
-        [cite_start]<p>جميع المعلومات مستقاة من وثائق "فرص المناطق الاقتصادية الخاصة في المملكة" - هيئة المدن والمناطق الاقتصادية الخاصة [cite: 1]</p>
+        <span class="footer-credit">إعداد / نصار منصور الغريب</span>
+        <p>المصادر: وثائق هيئة المدن والمناطق الاقتصادية الخاصة (ECZA)</p>
     </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            function cleanCitations() {
+                const elements = document.getElementsByTagName('*');
+                for (let i = 0; i < elements.length; i++) {
+                    const element = elements[i];
+                    for (let j = 0; j < element.childNodes.length; j++) {
+                        const node = element.childNodes[j];
+                        if (node.nodeType === 3) { 
+                            const text = node.nodeValue;
+                            const newText = text.replace(/\+\]/g, '');
+                            if (newText !== text) {
+                                node.nodeValue = newText;
+                            }
+                        }
+                    }
+                }
+            }
+            cleanCitations();
+        });
+    </script>
 
 </body>
 </html>
