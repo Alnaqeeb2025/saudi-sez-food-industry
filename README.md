@@ -150,9 +150,9 @@
             <h2><i class="fas fa-star" style="color: var(--secondary);"></i> التوصية الاستثمارية: منطقة جازان (JCPDI)</h2>
             <p>بعد تحليل المناطق الاقتصادية، نوصي <strong>مجموعة بن عوض النقيب</strong> باختيار منطقة جازان للأسباب التالية:</p>
             <ul>
-                [cite_start]<li><strong>الاستهداف القطاعي:</strong> المنطقة الوحيدة المخصصة صراحةً لقطاع "معالجة الأغذية"[cite: 674].</li>
-                [cite_start]<li><strong>خفض التكاليف:</strong> توفر طاقة ومياه بأسعار صناعية مدعومة، مما يرفع هامش الربح[cite: 715, 718].</li>
-                [cite_start]<li><strong>بوابة التصدير:</strong> امتلاكها ميناءً صناعياً ضخماً على البحر الأحمر يسهل الوصول للأسواق الأفريقية[cite: 668].</li>
+                <li><strong>الاستهداف القطاعي:</strong> المنطقة الوحيدة المخصصة صراحةً لقطاع "معالجة الأغذية".</li>
+                <li><strong>خفض التكاليف:</strong> توفر طاقة ومياه بأسعار صناعية مدعومة، مما يرفع هامش الربح.</li>
+                <li><strong>بوابة التصدير:</strong> امتلاكها ميناءً صناعياً ضخماً على البحر الأحمر يسهل الوصول للأسواق الأفريقية.</li>
             </ul>
             <a href="https://www.investjcpdi.com" target="_blank" class="btn-contact">
                 <i class="fas fa-external-link-alt"></i> زيارة الموقع الرسمي للمنطقة
@@ -175,23 +175,23 @@
                     <tbody>
                         <tr>
                             <td><strong>جازان (JCPDI)</strong></td>
-                            [cite_start]<td>معالجة الأغذية، تحويل المعادن [cite: 674]</td>
-                            [cite_start]<td>5% ضريبة دخل (20 عاماً)، 0% ضريبة قيمة مضافة [cite: 726]</td>
-                            [cite_start]<td>طاقة رخيصة، مياه متعددة الخيارات [cite: 718]</td>
+                            <td>معالجة الأغذية، تحويل المعادن</td>
+                            <td>5% ضريبة دخل (20 عاماً)، 0% ضريبة قيمة مضافة</td>
+                            <td>طاقة رخيصة، مياه متعددة الخيارات</td>
                             <td><a href="https://www.investjcpdi.com" target="_blank" class="source-link">عرض المصدر <i class="fas fa-arrow-left"></i></a></td>
                         </tr>
                         <tr>
                             <td><strong>مدينة الملك عبدالله (KAEC)</strong></td>
-                            [cite_start]<td>السلع الاستهلاكية، السيارات [cite: 493]</td>
-                            [cite_start]<td>5% ضريبة دخل، إعفاء جمركي [cite: 561]</td>
-                            [cite_start]<td>ميناء عالمي، غاز طبيعي [cite: 541]</td>
+                            <td>السلع الاستهلاكية، السيارات</td>
+                            <td>5% ضريبة دخل، إعفاء جمركي</td>
+                            <td>ميناء عالمي، غاز طبيعي</td>
                             <td><a href="https://www.kaec.net/kaecsez" target="_blank" class="source-link">عرض المصدر <i class="fas fa-arrow-left"></i></a></td>
                         </tr>
                         <tr>
                             <td><strong>اللوجستية بالرياض (RISLZ)</strong></td>
-                            [cite_start]<td>الخدمات اللوجستية، التجميع [cite: 818]</td>
-                            [cite_start]<td>إعفاء ضريبي 50 عاماً [cite: 867]</td>
-                            [cite_start]<td>موقع جوي استراتيجي [cite: 805]</td>
+                            <td>الخدمات اللوجستية، التجميع</td>
+                            <td>إعفاء ضريبي 50 عاماً</td>
+                            <td>موقع جوي استراتيجي</td>
                             <td><a href="https://www.silz.gaca.gov.sa" target="_blank" class="source-link">عرض المصدر <i class="fas fa-arrow-left"></i></a></td>
                         </tr>
                     </tbody>
@@ -204,7 +204,7 @@
             <div class="finance-grid">
                 <div class="finance-item">
                     <h3><i class="fas fa-money-bill-wave" style="color: var(--primary);"></i> تعزيز السيولة النقدية</h3>
-                    [cite_start]<p>تأجيل الرسوم الجمركية [cite: 728] [cite_start]وإعفاء ضريبة القيمة المضافة [cite: 731] يوفر سيولة فورية للمجموعة عند التأسيس.</p>
+                    <p>تأجيل الرسوم الجمركية وإعفاء ضريبة القيمة المضافة يوفر سيولة فورية للمجموعة عند التأسيس.</p>
                     <span class="finance-source">المصدر: حوافز المنطقة الاقتصادية</span>
                 </div>
                 <div class="finance-item">
@@ -243,28 +243,6 @@
         <span class="footer-credit">إعداد / نصار منصور الغريب</span>
         <p>المصادر: وثائق هيئة المدن والمناطق الاقتصادية الخاصة (ECZA)</p>
     </footer>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            function cleanCitations() {
-                const elements = document.getElementsByTagName('*');
-                for (let i = 0; i < elements.length; i++) {
-                    const element = elements[i];
-                    for (let j = 0; j < element.childNodes.length; j++) {
-                        const node = element.childNodes[j];
-                        if (node.nodeType === 3) { 
-                            const text = node.nodeValue;
-                            const newText = text.replace(/\+\]/g, '');
-                            if (newText !== text) {
-                                node.nodeValue = newText;
-                            }
-                        }
-                    }
-                }
-            }
-            cleanCitations();
-        });
-    </script>
 
 </body>
 </html>
