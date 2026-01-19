@@ -117,9 +117,9 @@
         }
         @keyframes fadeIn { 0%,100% {opacity:0.6} 50% {opacity:1} }
 
-        table { width: 100%; border-collapse: collapse; min-width: 800px; }
-        th { background: var(--primary); color: white; padding: 15px; text-align: right; font-size: 1rem; white-space: nowrap; }
-        td { padding: 12px; border-bottom: 1px solid #eee; color: var(--text-dark); vertical-align: middle; }
+        table { width: 100%; border-collapse: collapse; min-width: 1000px; /* زيادة العرض لاستيعاب المحتوى الجديد */ }
+        th { background: var(--primary); color: white; padding: 15px; text-align: right; font-size: 1rem; white-space: nowrap; vertical-align: top; }
+        td { padding: 12px; border-bottom: 1px solid #eee; color: var(--text-dark); vertical-align: top; font-size: 0.9rem; }
         tr:nth-child(even) { background-color: #f8fafc; }
         
         .badge {
@@ -129,10 +129,15 @@
             font-size: 0.8rem;
             font-weight: bold;
             margin-bottom: 3px;
-            white-space: nowrap;
+            background: #e0f2fe; color: #0369a1;
         }
-        .badge-sector { background: #e0f2fe; color: #0369a1; }
-        .badge-infra { background: #f0fdf4; color: #15803d; }
+        
+        ul.table-list {
+            list-style-type: disc;
+            padding-right: 20px;
+            margin: 0;
+        }
+        ul.table-list li { margin-bottom: 5px; }
 
         /* --- التوصية الاستثمارية --- */
         .recommendation { border-top-color: var(--gold); background: linear-gradient(to bottom, #ffffff, #fffdf7); }
@@ -310,78 +315,149 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>المنطقة</th>
-                            <th width="30%">القطاعات المستهدفة</th>
-                            <th>المزايا المالية والضريبية</th>
-                            <th>البنية التحتية والمرافق</th>
-                            <th>الموقع الرسمي</th>
+                            <th width="15%">المنطقة</th>
+                            <th width="25%">القطاعات المستهدفة</th>
+                            <th width="25%">الحوافز</th>
+                            <th width="25%">المزايا / التسهيلات</th>
+                            <th width="10%">الموقع الرسمي</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background-color: #f0fdf4;">
-                            <td style="font-weight: bold; color: var(--primary);">
-                                <i class="fas fa-star" style="color: var(--gold);"></i> منطقة جازان (JCPDI)
-                            </td>
-                            <td>
-                                <span class="badge badge-sector">معالجة الأغذية</span><br>
-                                <span class="badge badge-sector">تحويل المعادن</span>
-                            </td>
-                            <td>
-                                • 5% ضريبة دخل<br>
-                                • 0% ضريبة قيمة مضافة<br>
-                                • تأجيل الرسوم الجمركية
-                            </td>
-                            <td>
-                                <span class="badge badge-infra">طاقة رخيصة</span><br>
-                                <span class="badge badge-infra">خيارات مياه متعددة</span>
-                            </td>
-                            <td><a href="https://www.investjcpdi.com" target="_blank" class="btn-link">زيارة</a></td>
-                        </tr>
                         <tr>
-                            <td>مدينة الملك عبدالله (KAEC)</td>
+                            <td style="font-weight:bold;">المنطقة الاقتصادية الخاصة بمدينة الملك عبد الله الاقتصادية (KAEC) – مكة</td>
                             <td>
-                                <span class="badge badge-sector">السلع الاستهلاكية</span><br>
-                                <span class="badge badge-sector">صناعة السيارات</span>
+                                <ul class="table-list">
+                                    <li>سلسلة إمداد السيارات وتجميعها</li>
+                                    <li>السلع الاستهلاكية</li>
+                                    <li>الصناعات الإلكترونية الخفيفة</li>
+                                    <li>الأدوية</li>
+                                    <li>التقنيات الطبية</li>
+                                    <li>الخدمات اللوجستية</li>
+                                </ul>
                             </td>
                             <td>
-                                • 5% ضريبة دخل<br>
-                                • إعفاء جمركي للمعدات
+                                <ul class="table-list">
+                                    <li>5% ضريبة دخل الشركات لمدة 20 عامًا</li>
+                                    <li>0% ضريبة الاقتطاع (دائمًا) على إعادة الأرباح إلى دول أجنبية</li>
+                                    <li>0% الرسوم الجمركية المؤجلة على البضائع المدخلة</li>
+                                    <li>لوائح مرنة للمواهب الأجنبية خلال أول 5 سنوات</li>
+                                    <li>0% ضريبة القيمة المضافة على السلع داخل المنطقة والمتبادلة داخلها وبين المناطق</li>
+                                    <li>إعفاء من الرسوم التشغيلية للموظفين الأجانب وعائلاتهم داخل المنطقة</li>
+                                </ul>
                             </td>
                             <td>
-                                <span class="badge badge-infra">ميناء الملك عبدالله</span><br>
-                                <span class="badge badge-infra">شبكة غاز طبيعي</span>
+                                <ul class="table-list">
+                                    <li>موقع جيوستراتيجي على البحر الأحمر يسهّل الوصول لسلاسل الإمداد العالمية، مع ربط سككي عالي السرعة (450 كم) ووصول للكفاءات الماهرة وقرب من مطار الملك عبدالعزيز وجدة</li>
+                                    <li>بنية مرافق عالية الجودة: كهرباء (أكثر من 29 جيجاوات/ساعة سنويًا من طاقة نظيفة – خطط قيد التنفيذ)، ألياف ضوئية، صرف صحي مترابط (مفاعل حيوي غشائي)، مياه بضغط 1.5 بار (حد أدنى)، وتزويد بغاز طبيعي “بتكلفة مناسبة”</li>
+                                </ul>
                             </td>
                             <td><a href="https://www.kaec.net/kaecsez" target="_blank" class="btn-link">زيارة</a></td>
                         </tr>
+
                         <tr>
-                            <td>رأس الخير (Ras Al-Khair)</td>
+                            <td style="font-weight:bold;">المنطقة الاقتصادية الخاصة برأس الخير – المنطقة الشرقية</td>
                             <td>
-                                <span class="badge badge-sector">الصناعات البحرية</span><br>
-                                <span class="badge badge-sector">منصات الحفر</span>
+                                <ul class="table-list">
+                                    <li>بناء السفن (الصيانة/الإصلاح/التشغيل)</li>
+                                    <li>منصات الحفر العائمة (الصيانة/الإصلاح/التشغيل)</li>
+                                </ul>
                             </td>
                             <td>
-                                • 5% ضريبة دخل<br>
-                                • 0% ضريبة استقطاع
+                                <ul class="table-list">
+                                    <li>5% ضريبة دخل الشركات لمدة 20 عامًا</li>
+                                    <li>0% ضريبة الاقتطاع (دائمًا) على إعادة الأرباح إلى دول أجنبية</li>
+                                    <li>0% الرسوم الجمركية المؤجلة على البضائع المدخلة</li>
+                                    <li>لوائح مرنة للمواهب الأجنبية خلال أول 5 سنوات</li>
+                                    <li>0% ضريبة القيمة المضافة على السلع داخل المنطقة والمتبادلة داخلها وبين المناطق</li>
+                                    <li>إعفاء من الرسوم التشغيلية للموظفين الأجانب وعائلاتهم داخل المنطقة</li>
+                                </ul>
                             </td>
                             <td>
-                                <span class="badge badge-infra">أكبر حوض بناء سفن</span><br>
-                                <span class="badge badge-infra">صناعات تعدينية ثقيلة</span>
+                                <ul class="table-list">
+                                    <li>قربها من ميناء رأس الخير (أحدث ميناء صناعي) يخدم الشحنات السائبة وأكثر من 100 مشروع تصنيع، ويستقبل السفن بمختلف أحجامها</li>
+                                    <li>ربط سككي شمال–جنوب للوصول إلى مواد المدخلات، وقرب من مطار الملك فهد الدولي (43 وجهة)، وحوض بناء سفن “الأكبر في الشرق الأوسط وشمال أفريقيا” مع خدمات بناء/صيانة/إصلاح/ترميم</li>
+                                </ul>
                             </td>
                             <td><a href="https://www.rcjy.gov.sa" target="_blank" class="btn-link">زيارة</a></td>
                         </tr>
+
+                        <tr style="background-color: #f0fdf4; border: 2px solid var(--primary);">
+                            <td style="font-weight:bold; color:var(--primary);">المنطقة الاقتصادية الخاصة بجازان – جازان <i class="fas fa-star" style="color:var(--gold);"></i></td>
+                            <td>
+                                <ul class="table-list">
+                                    <li>معالجة الأغذية</li>
+                                    <li>تحويل المعادن</li>
+                                    <li>الخدمات اللوجستية</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="table-list">
+                                    <li>5% ضريبة دخل الشركات لمدة 20 عامًا</li>
+                                    <li>0% ضريبة الاقتطاع (دائمًا) على إعادة الأرباح إلى دول أجنبية</li>
+                                    <li>0% الرسوم الجمركية المؤجلة على البضائع المدخلة</li>
+                                    <li>لوائح مرنة للمواهب الأجنبية خلال أول 5 سنوات</li>
+                                    <li>0% ضريبة القيمة المضافة على السلع داخل المنطقة والمتبادلة داخلها وبين المناطق</li>
+                                    <li>إعفاء من الرسوم التشغيلية للموظفين الأجانب وعائلاتهم داخل المنطقة</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="table-list">
+                                    [cite_start]<li>الوصول إلى أحد أكبر الموانئ في المنطقة لتصدير السلع واستيراد مواد التصنيع [cite: 887]</li>
+                                    [cite_start]<li>توفر “كل ما تحتاجه” من الخدمات (الكهرباء/المياه/الأراضي/المواهب) لضمان مشروع فعال وتنافسي [cite: 887]</li>
+                                    [cite_start]<li>وصول مباشر لمواد خام (مثل الحجر الجيري/الجبس/الرمل/التراب الكلسي/الغاز الطبيعي) وقرب من مجمع مصفاة جازان في أرامكو [cite: 887]</li>
+                                    [cite_start]<li>طاقة منخفضة التكلفة (تشمل 2.4 جيجاوات)، قوى عاملة ماهرة، عقد إيجار صناعي تنافسي، وخيارات مياه منخفضة التكلفة [cite: 887]</li>
+                                </ul>
+                            </td>
+                            <td><a href="https://www.investjcpdi.com" target="_blank" class="btn-link">زيارة</a></td>
+                        </tr>
+
                         <tr>
-                            <td>الرياض اللوجستية (RISLZ)</td>
+                            <td style="font-weight:bold;">المنطقة الاقتصادية الخاصة للحوسبة السحابية والمعلوماتية – مقرها الرياض (غير مرتبطة بموقع محدد)</td>
                             <td>
-                                <span class="badge badge-sector">الخدمات اللوجستية</span><br>
-                                <span class="badge badge-sector">التجميع الخفيف</span>
+                                <ul class="table-list">
+                                    <li>خدمات الحوسبة السحابية</li>
+                                </ul>
                             </td>
                             <td>
-                                • إعفاء ضريبي لمدة 50 عاماً<br>
-                                • 0% ضريبة دخل
+                                <ul class="table-list">
+                                    <li>معاملة ضريبية خاصة تتماشى مع مبدأ تجنب الازدواج الضريبي لمنظمة التعاون والتنمية الاقتصادية وبما يتوافق مع نموذج تشغيل مزودي الخدمات السحابية</li>
+                                    <li>تكلفة كهرباء للشركات 0.05 دولار/كيلوواط-ساعة</li>
+                                    <li>إعفاء من الرسوم التشغيلية للموظفين الأجانب وعائلاتهم داخل المنطقة</li>
+                                </ul>
                             </td>
                             <td>
-                                <span class="badge badge-infra">موقع جوي استراتيجي</span><br>
-                                <span class="badge badge-infra">بنية رقمية متقدمة</span>
+                                <ul class="table-list">
+                                    <li>غير مرتبطة بموقع جغرافي محدد: مقرها في الرياض (برج الابتكار بمدينة الملك عبدالعزيز للعلوم والتقنية) مع إمكانية إنشاء وتشغيل مراكز البيانات في جميع أنحاء المملكة</li>
+                                    <li>مرونة تقديم خدمات الحوسبة السحابية وإمكانية إنشاء/تشغيل مراكز البيانات من أنحاء المملكة</li>
+                                </ul>
+                            </td>
+                            <td><a href="https://www.cst.gov.sa" target="_blank" class="btn-link">زيارة</a></td>
+                        </tr>
+
+                        <tr>
+                            <td style="font-weight:bold;">المنطقة الخاصة اللوجستية المتكاملة في الرياض (SILZ) – الرياض</td>
+                            <td>
+                                <ul class="table-list">
+                                    <li>المنتجات الاستهلاكية</li>
+                                    <li>أجزاء الحاسوب</li>
+                                    <li>الأدوية</li>
+                                    <li>المستلزمات الغذائية والطبية</li>
+                                    <li>صناعة الفضاء وقطاع الغيار</li>
+                                    <li>السلع الكمالية والمجوهرات والمعادن النفيسة</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="table-list">
+                                    <li>إعفاء من الرسوم الجمركية على السلع المستوردة أو المنقولة داخل المنطقة</li>
+                                    <li>إعفاء من ضريبة القيمة المضافة على البضائع الداخلة لأنشطة الخدمة أو التصنيع</li>
+                                    <li>معدل ضريبة دخل 0% على أنشطة محددة</li>
+                                    <li>مزايا ضريبية تنافسية إضافية: 0% ضريبة دخل الشركات، إعفاءات ضريبة الاستقطاع، إعفاءات رسوم تحويل الأموال، إعفاءات على ضريبة القيمة المضافة، وإعفاءات ضريبية لمدة 50 عامًا</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="table-list">
+                                    <li>مزايا تسهيل ممارسة الأعمال: منصة موحدة للخدمات، ممر يربط مطار الملك خالد بالمناطق الأخرى، الإعفاء من قيود إعادة رأس المال، التصديق السريع للتصدير، إعفاء البضائع من الرسوم الجمركية، متطلبات مرنة للتوطين، و ملكية أجنبية 100%</li>
+                                </ul>
                             </td>
                             <td><a href="https://www.silz.gaca.gov.sa" target="_blank" class="btn-link">زيارة</a></td>
                         </tr>
