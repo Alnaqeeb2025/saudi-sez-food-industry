@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>عرض استثماري - مجموعة بن عوض النقيب</title>
+    <title>عرض استثماري - فرص الاستثمار الصناعي</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -24,7 +24,7 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* يمنع الصفحة كاملة من الانزلاق يميناً ويساراً */
+            overflow-x: hidden;
         }
 
         body {
@@ -42,17 +42,16 @@
             padding: 4rem 1.5rem;
             text-align: center;
             position: relative;
-            width: 100%; /* ضمان ملء الشاشة */
+            width: 100%;
             border-bottom: 6px solid var(--gold);
         }
 
-        /* تحسين خلفية المربعات لتكون ناعمة */
         header::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-            opacity: 0.08; /* تخفيف حدة المربعات */
+            opacity: 0.08;
             background-size: auto;
             background-repeat: repeat;
         }
@@ -67,22 +66,6 @@
             line-height: 1.3;
         }
 
-        .dedication {
-            background-color: rgba(255,255,255,0.1);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 50px;
-            border: 1px solid var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .dedication h2 {
-            margin: 0;
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            color: var(--gold-light);
-            font-weight: 700;
-        }
-
         /* --- الحاويات والبطاقات --- */
         .container { 
             max-width: 1200px; 
@@ -90,7 +73,7 @@
             padding: 0 15px 40px;
             position: relative; 
             z-index: 10; 
-            width: 100%; /* ضمان عدم تجاوز عرض الشاشة */
+            width: 100%;
         }
 
         .card {
@@ -101,7 +84,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             border-top: 4px solid transparent;
             width: 100%;
-            overflow: hidden; /* يمنع المحتوى من الخروج من البطاقة */
+            overflow: hidden;
         }
 
         .section-title {
@@ -116,7 +99,7 @@
         /* --- الجدول متجاوب --- */
         .table-container { 
             width: 100%;
-            overflow-x: auto; /* الجدول فقط هو الذي يتحرك */
+            overflow-x: auto;
             border-radius: 10px; 
             box-shadow: 0 0 10px rgba(0,0,0,0.05); 
             -webkit-overflow-scrolling: touch;
@@ -134,7 +117,7 @@
         }
         @keyframes fadeIn { 0%,100% {opacity:0.6} 50% {opacity:1} }
 
-        table { width: 100%; border-collapse: collapse; min-width: 800px; /* يحافظ على عرض الجدول في الداخل */ }
+        table { width: 100%; border-collapse: collapse; min-width: 800px; }
         th { background: var(--primary); color: white; padding: 15px; text-align: right; font-size: 1rem; white-space: nowrap; }
         td { padding: 12px; border-bottom: 1px solid #eee; color: var(--text-dark); vertical-align: middle; }
         tr:nth-child(even) { background-color: #f8fafc; }
@@ -301,9 +284,8 @@
             .btn-main { width: 100%; } 
             .scroll-hint { display: block; }
             
-            /* إصلاح مشكلة الهيدر والفوتر */
             header, footer {
-                width: 100vw; /* عرض كامل الشاشة */
+                width: 100vw;
                 box-sizing: border-box;
             }
         }
@@ -313,9 +295,6 @@
 
     <header>
         <div class="header-content">
-            <div class="dedication">
-                <h2>إهداء إلى مجموعة بن عوض النقيب</h2>
-            </div>
             <h1>فرص الاستثمار الصناعي في المملكة</h1>
             <p style="font-size: clamp(1rem, 3vw, 1.3rem); margin-top: 15px; font-weight: 500; color: var(--gold-light); line-height: 1.6;">
                 مقارنة بين المدن الاقتصادية في المملكة العربية السعودية لتأسيس مصانع المواد الغذائية
