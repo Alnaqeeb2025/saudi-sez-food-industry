@@ -64,7 +64,7 @@
 
         /* محتوى الشريحة */
         .slide-content {
-            padding: 40px;
+            padding: 30px; /* تقليل الهوامش قليلاً لتوفير مساحة للجدول */
             flex-grow: 1;
         }
 
@@ -97,22 +97,58 @@
             font-size: 1rem;
         }
 
-        /* --- الجدول (Slide 2) - محدث بالكامل --- */
-        .table-wrapper { overflow-x: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-        table { width: 100%; border-collapse: collapse; min-width: 1100px; /* توسيع الجدول لاستيعاب النص */ }
-        th { background: var(--primary); color: white; padding: 15px; font-size: 1rem; text-align: right; vertical-align: top; }
-        td { padding: 15px; border-bottom: 1px solid #eee; font-size: 0.9rem; vertical-align: top; color: #333; }
+        /* --- الجدول (Slide 2) - تعديل لملء الشاشة --- */
+        .table-wrapper { 
+            overflow-x: auto; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.05); 
+            width: 100%;
+        }
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            /* تم حذف min-width الكبير للسماح للجدول بالتناسب مع شاشة الكمبيوتر */
+        }
+        
+        th { 
+            background: var(--primary); 
+            color: white; 
+            padding: 12px; 
+            font-size: 0.95rem; 
+            text-align: right; 
+            vertical-align: middle;
+            white-space: normal; /* السماح بالتفاف النص في العنوان */
+        }
+        
+        td { 
+            padding: 10px; /* تقليل الحشوة */
+            border-bottom: 1px solid #eee; 
+            font-size: 0.85rem; /* تصغير الخط قليلاً ليناسب المحتوى الغزير */
+            vertical-align: top; 
+            color: #333; 
+        }
         
         /* تنسيق القوائم داخل الجدول */
-        ul.tbl-list { margin: 0; padding-right: 18px; list-style: disc; line-height: 1.5; }
-        ul.tbl-list li { margin-bottom: 8px; }
+        ul.tbl-list { margin: 0; padding-right: 15px; list-style: disc; line-height: 1.4; }
+        ul.tbl-list li { margin-bottom: 6px; }
         
-        .btn-visit { background: var(--primary); color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-size: 0.8rem; display: inline-block; white-space: nowrap; margin-top: 5px;}
+        .btn-visit { 
+            background: var(--primary); 
+            color: white; 
+            text-decoration: none; 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            font-size: 0.75rem; 
+            display: inline-block; 
+            white-space: nowrap; 
+            margin-top: 5px;
+        }
         .btn-visit:hover { background: var(--gold); }
 
         /* تمييز صف جازان */
         .highlight-row { background-color: #f0fdf4; border-left: 5px solid var(--gold); }
-        .highlight-row td { font-weight: 500; }
+        .highlight-row td { font-weight: 600; color: #000; }
 
         /* --- التوصية (Slide 3) --- */
         .rec-box {
@@ -171,7 +207,7 @@
         /* --- الروابط (Slide 5) --- */
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 40px;
         }
@@ -192,14 +228,20 @@
 
         footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; }
 
+        /* تحسينات للجوال فقط */
         @media (max-width: 768px) {
             .slide { min-height: auto; margin-bottom: 20px; border-radius: 10px;}
-            .slide-content { padding: 20px; }
+            .slide-content { padding: 15px; }
             .cover-slide h1 { font-size: 1.8rem; }
             .slide-title { font-size: 1.1rem; }
-            /* تحسين عرض الجدول للجوال */
-            ul.tbl-list { font-size: 0.85rem; padding-right: 15px; }
+            
+            /* إعادة تفعيل العرض الأدنى للجدول فقط في الجوال للسحب */
+            table { min-width: 900px; }
+            .table-scroll-hint { display: block !important; text-align: center; font-size: 0.8rem; color: #888; margin-top: 5px; }
         }
+        
+        /* إخفاء تلميح السحب في الكمبيوتر */
+        .table-scroll-hint { display: none; }
     </style>
 </head>
 <body>
@@ -226,13 +268,20 @@
         <div class="slide-content">
             <div class="table-wrapper">
                 <table>
+                    <colgroup>
+                        <col style="width: 15%;">
+                        <col style="width: 20%;">
+                        <col style="width: 25%;">
+                        <col style="width: 30%;">
+                        <col style="width: 10%;">
+                    </colgroup>
                     <thead>
                         <tr>
-                            <th width="15%">المنطقة</th>
-                            <th width="20%">القطاعات المستهدفة</th>
-                            <th width="30%">الحوافز</th>
-                            <th width="25%">المزايا / التسهيلات</th>
-                            <th width="10%">الموقع الرسمي</th>
+                            <th>المنطقة</th>
+                            <th>القطاعات المستهدفة</th>
+                            <th>الحوافز</th>
+                            <th>المزايا / التسهيلات</th>
+                            <th>الموقع</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -257,13 +306,13 @@
                             </td>
                             <td>
                                 <ul class="tbl-list">
-                                    <li>أحد أكبر الموانئ لتصدير السلع واستيراد المواد.</li>
+                                    <li>أحد أكبر الموانئ لتصدير السلع واستيراد مواد التصنيع.</li>
                                     <li>توفر شامل للخدمات (كهرباء/مياه/أراضي/مواهب).</li>
                                     <li>وصول مباشر لمواد خام وقرب من مصفاة أرامكو.</li>
                                     <li>طاقة منخفضة التكلفة (2.4 جيجاوات) وخيارات مياه رخيصة.</li>
                                 </ul>
                             </td>
-                            <td><a href="https://www.investjcpdi.com" target="_blank" class="btn-visit">زيارة الموقع</a></td>
+                            <td style="text-align:center;"><a href="https://www.investjcpdi.com" target="_blank" class="btn-visit">زيارة</a></td>
                         </tr>
 
                         <tr>
@@ -291,10 +340,10 @@
                                 <ul class="tbl-list">
                                     <li>موقع جيوستراتيجي على البحر الأحمر وربط سككي عالي السرعة.</li>
                                     <li>قرب من مطار الملك عبدالعزيز وجدة.</li>
-                                    <li>بنية مرافق عالية: كهرباء، ألياف ضوئية، صرف صحي، مياه بضغط 1.5 بار، وتزويد بغاز طبيعي.</li>
+                                    <li>بنية مرافق عالية: كهرباء (طاقة نظيفة)، ألياف ضوئية، صرف صحي، مياه بضغط 1.5 بار، وتزويد بغاز طبيعي.</li>
                                 </ul>
                             </td>
-                            <td><a href="https://www.kaec.net/kaecsez" target="_blank" class="btn-visit">زيارة الموقع</a></td>
+                            <td style="text-align:center;"><a href="https://www.kaec.net/kaecsez" target="_blank" class="btn-visit">زيارة</a></td>
                         </tr>
 
                         <tr>
@@ -319,11 +368,11 @@
                                 <ul class="tbl-list">
                                     <li>قربها من ميناء رأس الخير (أحدث ميناء صناعي).</li>
                                     <li>ربط سككي شمال–جنوب للوصول للمواد.</li>
-                                    <li>قرب من مطار الملك فهد.</li>
+                                    <li>قرب من مطار الملك فهد (43 وجهة).</li>
                                     <li>أكبر حوض بناء سفن في المنطقة.</li>
                                 </ul>
                             </td>
-                            <td><a href="https://www.rcjy.gov.sa" target="_blank" class="btn-visit">زيارة الموقع</a></td>
+                            <td style="text-align:center;"><a href="https://www.rcjy.gov.sa" target="_blank" class="btn-visit">زيارة</a></td>
                         </tr>
 
                         <tr>
@@ -353,12 +402,12 @@
                                     <li>تصديق سريع للتصدير وملكية أجنبية 100%.</li>
                                 </ul>
                             </td>
-                            <td><a href="https://www.silz.gaca.gov.sa" target="_blank" class="btn-visit">زيارة الموقع</a></td>
+                            <td style="text-align:center;"><a href="https://www.silz.gaca.gov.sa" target="_blank" class="btn-visit">زيارة</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div style="text-align:center; font-size:0.8rem; color:#888; margin-top:5px;">(اسحب الجدول يميناً ويساراً لعرض كامل البيانات)</div>
+            <div class="table-scroll-hint">(اسحب الجدول يميناً ويساراً لعرض كامل البيانات)</div>
         </div>
         <div class="slide-number">01</div>
     </section>
